@@ -1,23 +1,25 @@
 import styles from "./Book.module.scss";
 
 const Book = ({ item }) => {
-	console.log(item);
+	const img = item.volumeInfo.imageLinks
+		? item.volumeInfo.imageLinks.thumbnail
+		: "";
+	const title = item.volumeInfo.title ? item.volumeInfo.title : "No Title";
+	const authors = item.volumeInfo.authors
+		? item.volumeInfo.authors.join(", ")
+		: "Unknown Author";
+	const description = item.volumeInfo.description
+		? item.volumeInfo.description
+		: "No description";
+
 	return (
 		<div className={styles.Book}>
-			<img
-				src={item.volumeInfo.imageLinks.thumbnail}
-				alt={item.volumeInfo.title}
-				width="100px"
-			/>
+			<img src={img} alt={title} width="100px" />
 			<div>
-				<h4>{item.volumeInfo.title}</h4>
-				{item.volumeInfo.authors ? (
-					<p>By {item.volumeInfo.authors.join(", ")}</p>
-				) : (
-					<></>
-				)}
+				<h4>{title}</h4>
+				<p>By {authors}</p>
 				<p>
-					<i>{item.volumeInfo.description}</i>
+					<i>{description}</i>
 				</p>
 			</div>
 		</div>

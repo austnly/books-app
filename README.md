@@ -54,7 +54,7 @@ Bonus (optional, but highly recommended):
 
 ### Issues to Address
 
--   [ ] Handle missing data
+-   [ ] Handle missing API data (authors, images etc.)
 
 ### Nice To Haves
 

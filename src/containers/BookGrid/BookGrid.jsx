@@ -3,9 +3,9 @@ import Book from "../../components/Book";
 import styles from "./BookGrid.module.scss";
 
 const BookGrid = ({ result }) => {
-	useEffect(() => {
-		console.log("useEffect triggered");
-	}, [result]);
+	// useEffect(() => {
+	// 	console.log("useEffect triggered");
+	// }, [result]);
 
 	return (
 		<div className={styles.BookGrid}>
