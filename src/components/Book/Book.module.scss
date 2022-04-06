@@ -1,0 +1,18 @@
+.Book {
+	display: flex;
+	flex-direction: row;
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+	border: 1px solid grey;
+	border-radius: 20px;
+	overflow: scroll;
+
+	img {
+		object-fit: contain;
+		width: 150px;
+	}
+
+	&__Info {
+	}
+}
