@@ -4,6 +4,13 @@ A single-page UI for the Google Books API using React.
 
 ## Implementation
 
+### To Do
+
+1. Restyle book cards to use image thumbnails and hover for details
+1. Add modals for more info
+1. Add expandable search fields
+1. Add pagination and max results
+
 ### Plan
 
 -   Create components (book cards, search bar, header)

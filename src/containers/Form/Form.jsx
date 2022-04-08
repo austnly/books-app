@@ -11,7 +11,7 @@ const Form = ({ onChange }) => {
 
 	return (
 		<form className={styles.Form} onSubmit={handleSubmit}>
-			<SearchBar onChange={onChange} />
+			<SearchBar onSubmit={handleSubmit} />
 		</form>
 	);
 };

@@ -1,2 +1,26 @@
+@use "./../../scss/palette";
+@use "./../../scss/typography";
+
 .Header {
+	text-align: center;
+
+	&__Heading {
+		@extend %raleway-font;
+		background: palette.$gradient-right;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		font-size: 12vh;
+		font-weight: 500;
+		margin-top: 10px;
+		margin-bottom: 0px;
+	}
+
+	&__Subtitle {
+		margin-top: 0px;
+		text-align: right;
+		font-size: 2vh;
+		transition: 0.5s;
+	}
 }

@@ -1,2 +1,58 @@
+@use "./../../scss/palette";
+
 .SearchBar {
+	border: 1px solid rgba(palette.$spanish-gray, 1);
+	border-radius: 20px;
+	overflow: hidden;
+	height: min-content;
+	margin: 10px;
+	// visibility: hidden;
+
+	&:focus {
+		outline: white solid 1px;
+	}
+	// background-color: rgba(palette.$spanish-gray, 0.5);
+
+	&__Input {
+		border-style: hidden;
+		outline: none;
+		padding: 5px;
+
+		font-size: 1rem;
+		background-color: rgba(palette.$spanish-gray, 0.5);
+
+		text-align: center;
+		color: palette.$light-text;
+
+		&:focus {
+			outline: none;
+
+			&::placeholder {
+				color: transparent;
+			}
+		}
+
+		&::placeholder {
+			color: rgba(palette.$light-text, 0.8);
+			text-align: center;
+			transition: 0.2s;
+		}
+	}
+
+	&__Button {
+		border: none;
+		background: linear-gradient(
+			270deg,
+			palette.$ash-gray,
+			rgba(palette.$spanish-gray, 0.5)
+		);
+		// background-color: palette.$ash-gray;
+		padding: 6px;
+		color: black;
+		cursor: pointer;
+
+		&:active {
+			background-color: white;
+		}
+	}
 }

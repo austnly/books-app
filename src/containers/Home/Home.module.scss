@@ -1,5 +1,17 @@
+@use "./../../scss/palette";
+@use "./../../scss/typography";
+
 .Home {
+	background-color: palette.$xanadu;
+	color: palette.$light-text;
+	@extend %raleway-font;
+
+	height: 100vh;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+
+	// overflow: scroll;
 }

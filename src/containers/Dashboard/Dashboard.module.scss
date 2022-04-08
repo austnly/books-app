@@ -1,0 +1,14 @@
+@use "./../../scss/palette";
+
+.Dashboard {
+	&__Navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		background-color: palette.$xanadu;
+		// background: palette.$gradient-top;
+		align-items: center;
+		padding: 0 10vw;
+	}
+}

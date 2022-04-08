@@ -1,0 +1,18 @@
+@use "./../../scss/palette";
+
+.Root {
+	background-color: rgba(palette.$alabaster, 1);
+	min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+
+	&-track {
+		background: rgba(palette.$alabaster, 0.5);
+	}
+
+	&-thumb {
+		background: palette.$ash-gray;
+	}
+}

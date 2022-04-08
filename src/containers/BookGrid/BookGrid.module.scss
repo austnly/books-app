@@ -1,4 +1,35 @@
+@use "./../../scss/palette";
+
 .BookGrid {
-	display: flex;
-	flex-wrap: wrap;
+	// display: flex;
+	// flex-wrap: wrap;
+
+	// // height: 80vh;
+	// overflow-y: scroll;
+	// overflow-x: hidden;
+	// min-height: 100%;
+	padding: 20px 0px;
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fit, 175px);
+
+	justify-content: center;
+	align-items: center;
+
+	// margin: 20px 0px 0px 0px;
+	// background: palette.$gradient-bottom;
+	background-color: rgba(palette.$alabaster, 1);
+	color: palette.$dark-text;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+
+		&-track {
+			background: rgba(palette.$alabaster, 0.5);
+		}
+
+		&-thumb {
+			background: palette.$ash-gray;
+		}
+	}
 }
