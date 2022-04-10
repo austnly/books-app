@@ -1,39 +1,30 @@
-@use "./../../scss/palette";
-@use "./../../scss/sizing";
+@use "./../../assets/scss/palette";
+@use "./../../assets/scss/sizing";
+@use "./../../assets/scss/responsive";
 
-.NoBooks {
+.NoBooks,
+.PreText {
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .BookGrid {
-	padding: 20px 20px;
+	padding: 0px 10px 20px 10px;
+
 	display: grid;
-	column-gap: 20px;
 	row-gap: 30px;
+
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+
+	column-gap: 20px;
 	grid-template-columns: repeat(auto-fit, 1.1 * sizing.$book-width);
 	grid-auto-rows: 1.1 * sizing.$book-height;
 
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-
-	justify-content: center;
-	align-items: center;
-
-	// margin: 20px 0px 0px 0px;
-	// background: palette.$gradient-bottom;
-	// background-color: rgba(palette.$alabaster, 1);
-	// color: palette.$dark-text;
-
-	&::-webkit-scrollbar {
-		width: 10px;
-
-		&-track {
-			background: rgba(palette.$alabaster, 0.5);
-		}
-
-		&-thumb {
-			background: palette.$ash-gray;
-		}
+	@include responsive.md-up {
+		column-gap: 10px;
+		grid-template-columns: repeat(auto-fit, sizing.$tile-hover-width);
+		grid-auto-rows: 1.1 * sizing.$book-height;
 	}
 }

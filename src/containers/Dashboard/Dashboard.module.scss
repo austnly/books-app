@@ -1,4 +1,4 @@
-@use "./../../scss/palette";
+@use "./../../assets/scss/palette";
 
 .Dashboard {
 	display: flex;
@@ -8,10 +8,10 @@
 	&__Navbar {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		flex-wrap: wrap;
 		background-color: palette.$xanadu;
-		// background: palette.$gradient-top;
+
 		align-items: center;
 		padding: 10px 10vw;
 
@@ -25,7 +25,11 @@
 
 		flex-grow: 1;
 		border-radius: 20px;
+
+		z-index: 1;
+		box-shadow: 0px 0px 20px 10px rgba(black, 0.3);
 	}
+
 	&__Footer {
 		flex-grow: 0;
 		text-align: center;

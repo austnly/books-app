@@ -3,16 +3,10 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+	// State var to change subtitle
 	const [showSub, setShowSub] = useState(false);
 
-	const showSubtitle = () => {
-		setShowSub(true);
-	};
-
-	const hideSubtitle = () => {
-		setShowSub(false);
-	};
-
+	// Alternative subtitle text
 	const subtitle = "powered by the google books api.";
 	const desc = "a simple book search engine.";
 
@@ -20,8 +14,8 @@ const Header = () => {
 		<div className={styles.Header}>
 			<h1
 				className={styles.Header__Heading}
-				onMouseEnter={showSubtitle}
-				onMouseLeave={hideSubtitle}>
+				onMouseEnter={() => setShowSub(true)}
+				onMouseLeave={() => setShowSub(false)}>
 				<Link to="/">bookle</Link>
 			</h1>
 			<p className={styles.Header__Subtitle}>

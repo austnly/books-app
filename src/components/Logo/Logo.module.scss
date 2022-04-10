@@ -1,12 +1,11 @@
-@use "./../../scss/palette";
-@use "./../../scss/typography";
+@use "./../../assets/scss/palette";
+@use "./../../assets/scss/typography";
 
 .Logo {
 	text-align: center;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
-	// margin: 10px;
 
 	@media only screen and (max-width: 845px) {
 		flex-direction: column;

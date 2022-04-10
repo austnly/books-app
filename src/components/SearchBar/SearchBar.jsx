@@ -1,15 +1,18 @@
 import styles from "./SearchBar.module.scss";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = ({ onChange }) => {
+const SearchBar = () => {
+	// Instantiating navigate func
 	const navigate = useNavigate();
 
+	// Trigger navigate to search page if searchVal is set by submitting SearchBar form
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const formData = new FormData(event.target);
-		navigate(`/search/${formData.get("search")}`);
-		// console.log(formData.get("search"));
-		// onChange(formData.get("search"));
+		const searchTerm = formData.get("search");
+		navigate(`/search/${searchTerm}`);
 	};
 
 	return (
@@ -20,14 +23,10 @@ const SearchBar = ({ onChange }) => {
 				placeholder="look up a book."
 				className={styles.SearchBar__Input}
 			/>
-			{/* <span className={styles.SearchBar__Button} onClick={onChange}>
-				&#8617;
-			</span> */}
-			<input
-				type="submit"
-				className={styles.SearchBar__Button}
-				value="&#8617;"
-			/>
+
+			<button type="submit" className={styles.SearchBar__Button}>
+				<FontAwesomeIcon icon={faMagnifyingGlass} />
+			</button>
 		</form>
 	);
 };

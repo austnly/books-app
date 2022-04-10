@@ -2,60 +2,56 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Book from "../../components/Book";
 import styles from "./BookGrid.module.scss";
+import { handleFetch } from "../../assets/fetcher";
 
 const BookGrid = () => {
+	// Passing URL param as searchTerm
 	const { searchTerm } = useParams();
 
-	console.log("Bookgrid render, searchTerm is", searchTerm);
-
-	const [searchVal, setSearchVal] = useState(searchTerm);
+	// Initialising results state var as null
 	const [result, setResult] = useState(null);
 
-	// API interaction
-	const handleFetch = async () => {
-		const url = "https://www.googleapis.com/books/v1/volumes?q=";
-		const response = await fetch(url + searchVal + "&maxResults=20");
-		const json = await response.json();
-		console.log("json.items", json.items);
-		setResult(json.items);
+	// Fetches from API and set result
+	const fetchResult = async (searchTerm) => {
+		setResult(await handleFetch(searchTerm));
 	};
 
-	// Fetch data from API if there is a search term
+	// Trigger fetchResult if URL changes searchTerm
 	useEffect(() => {
-		setSearchVal(searchTerm);
+		if (searchTerm) {
+			fetchResult(searchTerm);
+		} else {
+			setResult(undefined);
+		}
 	}, [searchTerm]);
 
-	useEffect(() => {
-		handleFetch();
-	}, [searchVal]);
+	// Declaring Alternative Results
+	const resultsPending = <p className={styles.NoBooks}>Loading...</p>;
 
-	// let content =
-	// useEffect(() => {
-
-	// }, [])
-
-	console.log("searchVal is", searchVal);
-	console.log("result is", result);
+	const resultsNotFound = (
+		<p className={styles.NoBooks}>No results found for "{searchTerm}"</p>
+	);
 
 	return (
 		<>
-			{result ? (
-				<div className={styles.BookGrid}>
-					{result.map((book) => {
-						return <Book key={book.id} item={book} />;
-					})}
-				</div>
-			) : result === null ? (
-				<p className={styles.NoBooks}>Loading...</p>
+			{result === null ? (
+				resultsPending
+			) : !result ? (
+				resultsNotFound
 			) : (
-				<p className={styles.NoBooks}>
-					No results found for {searchVal}
-				</p>
+				<>
+					<p className={styles.PreText}>
+						Showing results for "{searchTerm}"
+					</p>
+					<div className={styles.BookGrid}>
+						{result.map((book) => {
+							return <Book key={book.id} item={book} />;
+						})}
+					</div>
+				</>
 			)}
 		</>
 	);
 };
 
 export default BookGrid;
-
-// Need to fix clearing search term on load

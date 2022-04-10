@@ -1,6 +1,6 @@
 import "./App.module.scss";
-import Home from "./containers/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./containers/Home";
 import BookGrid from "./containers/BookGrid";
 import Root from "./containers/Root";
 import Dashboard from "./containers/Dashboard";
@@ -12,6 +12,7 @@ function App() {
 				<Route path="/" element={<Root />}>
 					<Route index element={<Home />} />
 					<Route path="search" element={<Dashboard />}>
+						<Route index element={<BookGrid />} />
 						<Route path=":searchTerm" element={<BookGrid />} />
 					</Route>
 				</Route>

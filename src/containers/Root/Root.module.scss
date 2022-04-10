@@ -1,6 +1,8 @@
-@use "./../../scss/palette";
+@use "./../../assets/scss/palette";
+@use "./../../assets/scss/typography";
 
 .Root {
+	@extend %raleway-font;
 	background-color: rgba(palette.$xanadu, 1);
 	min-height: 100vh;
 

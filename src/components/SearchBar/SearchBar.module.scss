@@ -1,32 +1,25 @@
-@use "./../../scss/palette";
+@use "./../../assets/scss/palette";
 
 .SearchBar {
-	// border: 1px solid rgba(palette.$spanish-gray, 1);
-	// border-radius: 20px;
-	// overflow: hidden;
-	// height: min-content;
 	margin: 10px;
-
-	// visibility: hidden;
-
-	&:focus {
-		// outline: white solid 1px;
-	}
-	// background-color: rgba(palette.$spanish-gray, 0.5);
 
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 
 	&__Input {
-		height: 1.5rem;
-		margin: 0px;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		border-radius: 0;
 		border-top-left-radius: 20px;
 		border-bottom-left-radius: 20px;
-
 		border-style: hidden;
 		outline: none;
+
+		height: 1.5rem;
+
 		padding: 5px;
+		margin: 0px;
 
 		font-size: 1rem;
 		background-color: rgba(palette.$spanish-gray, 0.5);
@@ -50,19 +43,23 @@
 	}
 
 	&__Button {
-		height: 34px;
-		margin: 0px;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		border-radius: 0;
 		border-top-right-radius: 20px;
 		border-bottom-right-radius: 20px;
 		border: none;
+
+		height: 34px;
+		margin: 0px;
+
 		background: linear-gradient(
 			270deg,
 			palette.$ash-gray,
 			rgba(palette.$spanish-gray, 0.5)
 		);
-		// background-color: palette.$ash-gray;
-		// padding: 6px;
-		color: black;
+
+		color: rgba(palette.$light-text, 1);
 		cursor: pointer;
 
 		&:active {

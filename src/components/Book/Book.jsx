@@ -1,6 +1,7 @@
 import styles from "./Book.module.scss";
 
 const Book = ({ item }) => {
+	// Checking existence of properties and setting vars
 	const title = item.volumeInfo.title ? item.volumeInfo.title : "No Title";
 	const authors = item.volumeInfo.authors
 		? item.volumeInfo.authors.join(", ")
@@ -9,7 +10,8 @@ const Book = ({ item }) => {
 		? item.volumeInfo.description
 		: "No description";
 
-	const img = item.volumeInfo.imageLinks ? (
+	// Return an image element, or if no image, return a paragraph element
+	const image = item.volumeInfo.imageLinks ? (
 		<img
 			className={styles.Book__Thumb}
 			src={item.volumeInfo.imageLinks.thumbnail}
@@ -21,18 +23,15 @@ const Book = ({ item }) => {
 
 	return (
 		<div className={styles.Book}>
-			{img}
-			{/* <div className={styles.Book__Label}>
-				<p>
-					{title} - {authors}
-				</p>
-			</div> */}
+			{image}
 			<div className={styles.Book__Info}>
 				<h4>{title}</h4>
 				<p>By {authors}</p>
-				<p>
-					<i>{description}</i>
-				</p>
+				<div className={styles.Book__Info_Desc}>
+					<p>
+						<i>{description}</i>
+					</p>
+				</div>
 			</div>
 		</div>
 	);
