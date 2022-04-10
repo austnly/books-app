@@ -1,17 +1,23 @@
 @use "./../../scss/palette";
+@use "./../../scss/sizing";
 
 .Book {
 	position: relative;
-	width: 175px;
-	height: 280px;
+	width: sizing.$book-width;
+	height: sizing.$book-height;
 	// min-height: ;
 	// border: 1px solid grey;
 	overflow: hidden;
-	// border-radius: 10px;
+	border-radius: 5px;
 
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	box-shadow: 0px 5px 10px 5px rgba(palette.$xanadu, 0.5);
+
+	transition: 0.5s;
 
 	// background-color: rgb(57, 57, 57);
 
@@ -43,6 +49,9 @@
 	}
 
 	&:hover {
+		width: 1.1 * sizing.$book-width;
+		height: 1.1 * sizing.$book-height;
+
 		.Book__Info {
 			opacity: 1;
 		}

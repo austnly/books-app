@@ -29,18 +29,30 @@ const BookGrid = () => {
 		handleFetch();
 	}, [searchVal]);
 
+	// let content =
+	// useEffect(() => {
+
+	// }, [])
+
 	console.log("searchVal is", searchVal);
+	console.log("result is", result);
 
 	return (
-		<div className={styles.BookGrid}>
+		<>
 			{result ? (
-				result.map((book) => {
-					return <Book key={book.id} item={book} />;
-				})
+				<div className={styles.BookGrid}>
+					{result.map((book) => {
+						return <Book key={book.id} item={book} />;
+					})}
+				</div>
+			) : result === null ? (
+				<p className={styles.NoBooks}>Loading...</p>
 			) : (
-				<p>Loading...</p>
+				<p className={styles.NoBooks}>
+					No results found for {searchVal}
+				</p>
 			)}
-		</div>
+		</>
 	);
 };
 

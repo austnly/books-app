@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Form from "./../Form";
 import { useEffect, useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
 	const [searchVal, handleSearch] = useOutletContext();
@@ -40,11 +41,14 @@ const Home = () => {
 	}, [searchVal]);
 
 	return (
-		<div className={styles.Home}>
-			<Header />
-			<SearchBar onChange={handleSearch} />
-			{/* {result ? <BookGrid searchTerm={searchVal} /> : <></>} */}
-		</div>
+		<>
+			<div className={styles.Home}>
+				<Header />
+				<SearchBar onChange={handleSearch} />
+				{/* {result ? <BookGrid searchTerm={searchVal} /> : <></>} */}
+			</div>
+			<Footer />
+		</>
 	);
 };
 

@@ -6,12 +6,14 @@
 	color: palette.$light-text;
 	@extend %raleway-font;
 
-	height: 100vh;
+	// height: 100vh;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	flex-grow: 1;
 
 	// overflow: scroll;
 }

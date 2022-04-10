@@ -7,7 +7,7 @@ import Dashboard from "./containers/Dashboard";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/books-app">
 			<Routes>
 				<Route path="/" element={<Root />}>
 					<Route index element={<Home />} />

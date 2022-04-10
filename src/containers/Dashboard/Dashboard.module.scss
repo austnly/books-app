@@ -1,6 +1,10 @@
 @use "./../../scss/palette";
 
 .Dashboard {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
 	&__Navbar {
 		display: flex;
 		flex-direction: row;
@@ -9,6 +13,22 @@
 		background-color: palette.$xanadu;
 		// background: palette.$gradient-top;
 		align-items: center;
-		padding: 0 10vw;
+		padding: 10px 10vw;
+
+		flex-grow: 0;
+	}
+
+	&__Content {
+		height: 100%;
+		background-color: rgba(palette.$alabaster, 1);
+		color: palette.$dark-text;
+
+		flex-grow: 1;
+		border-radius: 20px;
+	}
+	&__Footer {
+		flex-grow: 0;
+		text-align: center;
+		color: palette.$light-text;
 	}
 }

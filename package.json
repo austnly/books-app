@@ -1,7 +1,7 @@
 {
 	"name": "books-app",
 	"version": "0.1.0",
-	"homepage": "https://austnly.github.io/books-app",
+	"homepage": "https://austnly.github.io/books-app/",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.3",

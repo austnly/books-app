@@ -22,6 +22,11 @@ const Book = ({ item }) => {
 	return (
 		<div className={styles.Book}>
 			{img}
+			{/* <div className={styles.Book__Label}>
+				<p>
+					{title} - {authors}
+				</p>
+			</div> */}
 			<div className={styles.Book__Info}>
 				<h4>{title}</h4>
 				<p>By {authors}</p>

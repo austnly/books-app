@@ -1,8 +1,11 @@
 @use "./../../scss/palette";
 
 .Root {
-	background-color: rgba(palette.$alabaster, 1);
+	background-color: rgba(palette.$xanadu, 1);
 	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
 }
 
 ::-webkit-scrollbar {
