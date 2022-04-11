@@ -6,6 +6,17 @@ A web UI for the Google Books API using React and React Router.
 
 ### 🚀 [Launch Live Project](https://austnly.github.io/books-app/)
 
+## Table of Contents
+
+-   [Screenshots](#screenshots)
+-   [Goals](#goals)
+-   [Implementation](#implementation)
+    -   [MVP](#mvp)
+    -   [Plan](#plan)
+    -   [Issues Addressed](#issues-addressed)
+    -   [Features Added](#additions)
+-   [Future Additions](#future-additions)
+
 ## Screenshots
 
 <figure>
