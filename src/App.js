@@ -4,7 +4,6 @@ import Home from "./containers/Home";
 import BookGrid from "./containers/BookGrid";
 import Root from "./containers/Root";
 import Dashboard from "./containers/Dashboard";
-import BookModal from "./components/BookModal";
 
 function App() {
 	return (
@@ -14,9 +13,9 @@ function App() {
 					<Route index element={<Home />} />
 					<Route path="search" element={<Dashboard />}>
 						<Route index element={<BookGrid />} />
-						<Route path=":searchTerm" element={<BookGrid />}>
-							{/* <Route path=":bookId" element={<BookModal />} /> */}
-						</Route>
+						<Route
+							path=":searchTerm"
+							element={<BookGrid />}></Route>
 					</Route>
 				</Route>
 			</Routes>

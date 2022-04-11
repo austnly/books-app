@@ -3,9 +3,33 @@
 @use "./../../assets/scss/responsive";
 
 .NoBooks,
-.PreText {
+.PreText,
+.PostText {
 	text-align: center;
-	margin-top: 40px;
+}
+
+.PreText {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 20px 5vw 0px;
+
+	&__Max {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+}
+
+.PostText {
+	display: flex;
+	margin: 40px 5vw 0px;
+	justify-content: space-between;
+
+	&__Btn {
+		cursor: pointer;
+		font-weight: bold;
+	}
 }
 
 .BookGrid {

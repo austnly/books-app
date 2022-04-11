@@ -1,6 +1,9 @@
-export const handleFetch = async (searchVal) => {
-	const url = "https://www.googleapis.com/books/v1/volumes?q=";
-	const response = await fetch(url + searchVal + "&maxResults=20");
+export const handleFetch = async (searchVal, page = 1, maxResults = 20) => {
+	const startIndex = (page - 1) * maxResults;
+
+	const url = `https://www.googleapis.com/books/v1/volumes?q=${searchVal}&startIndex=${startIndex}&maxResults=${maxResults}`;
+
+	const response = await fetch(url);
 	const json = await response.json();
 	return json.items;
 };
