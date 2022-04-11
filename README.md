@@ -1,28 +1,37 @@
 # Google Books UI
 
-A single-page UI for the Google Books API using React.
+## Description
+
+A web UI for the Google Books API using React and React Router.
+
+## Launch
+
+The live project can be launched [here](https://austnly.github.io/books-app/).
+
+## Screenshots
+
+<figure>
+<img src="./src/assets/img/homepage.png" width="300px" alt="Home Page" />
+<figcaption><i>Home Page</i></figcaption>
+</figure>
+
+<figure>
+<img src="./src/assets/img/small.png" height="300px" alt="Small Screen UI" />
+<figcaption><i>Responsive UI</i></figcaption>
+</figure>
+
+<figure>
+<img src="./src/assets/img/modal.png" width="300px" alt="Search Result Modals" />
+<figcaption><i>Search Result Modals</i></figcaption>
+</figure>
+
+## Goals
+
+-   To learn to create and deploy modular components and containers using **React**
+-   To organise components and routes effectively with **React Router**
+-   To create a functional, intuitive and aesthetic interface using HTML and SCSS
 
 ## Implementation
-
-### To Do
-
-1. Restyle book cards to use image thumbnails and hover for details
-1. Add modals for more info
-1. Add expandable search fields
-1. Add pagination and max results
-
-### Plan
-
--   Create components (book cards, search bar, header)
--   Create containers (home, form, book list)
--   Plan layout and styling
--   Create fetch logic
-    -   Input field value acts as a state hook on button click
-    -   useEffect hook to send value as fetch query to Google Books API
-    -   useEffect hooks to changes in results object?
-    -   Results object passed to BookGrid container
-    -   Results iterated through to pass image, title, authors, description to book components
-    -   Booklist re-rendered with book cards
 
 ### MVP
 
@@ -59,12 +68,37 @@ Bonus (optional, but highly recommended):
 -   Give feedback to the user when no book results can be found for the query.
 -   When a user clicks a book in the grid, a modal should appear with more book information, think about release, publish date, country, languages, etc.
 
-### Issues to Address
+### Plan
 
--   [ ] Handle missing API data (authors, images etc.)
+-   Create components (book cards, search bar, header)
+-   Create containers (home, form, book list)
+-   Create fetch logic
+    -   Input field value acts as a state hook on button click
+    -   useEffect hook to send value as fetch query to Google Books API
+    -   useEffect hooks to changes in results object?
+    -   Results object passed to BookGrid container
+    -   Results iterated through to pass image, title, authors, description to book components
+    -   Booklist re-rendered with book cards
 
-### Nice To Haves
+### Issues Addressed
 
+I encountered issues with the source API data due to missing properties, which had to be handled to prevent errors:
+
+-   [x] Handle missing API data (authors, images etc.)
+-   [x] Handling cross-component state variables
+
+### Additions
+
+I added the suggested bonus features, as well as some more functionality to the search:
+
+-   [x] Feedback on no results
+-   [x] Add modals for more info
+-   [x] Utilised routes and URL parameters with React Router
+-   [x] Added pagination and max results
+-   [x] Details appear on hover over book image
+-   [x] Restyle book cards to use image thumbnails responsively
+
+### Future Additions
+
+-   [ ] Add expandable search fields
 -   [ ] Advanced search options (title, author, year)
--   [ ] Pagination, max results
--   [ ] Details appear on hover over book image
