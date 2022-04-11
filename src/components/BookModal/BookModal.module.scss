@@ -1,3 +1,6 @@
+@use "./../../assets/scss/palette";
+@use "./../../assets/scss/responsive";
+
 .BookModal {
 	display: block; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -15,32 +18,44 @@
 	align-items: center;
 
 	&__Box {
-		// text-align: center;
-		background-color: #fefefe;
-		margin: auto; /* 15% from the top and centered */
+		background-color: rgba(white, 0.95);
+		margin: auto;
 		// border-radius: 20px;
 		// padding: 20px;
 		border: 1px solid #888;
-		max-height: 90vh;
-		max-width: 90vw; /* Could be more or less, depending on screen size */
+
+		max-height: 70vh;
+		max-width: 90vw;
+
+		@include responsive.md-up {
+			max-width: 500px;
+		}
+
 		overflow: auto;
 		box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
 
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
 		&_Thumb {
 			margin: 10px 0px;
+			box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
 		}
 		&_Info {
 			display: grid;
-			gap: 20px;
-			grid-template-columns: auto auto;
+			gap: 10px;
+			grid-template-columns: 40% auto;
 			justify-content: center;
 			margin: 20px;
 
 			> * {
 				margin: 0;
+				padding: 0;
+			}
+
+			&_col1 {
+				font-weight: bold;
 			}
 		}
 	}
@@ -48,11 +63,12 @@
 
 /* The Close Button */
 .close {
+	padding: 5px;
+	margin-left: auto;
 	color: #aaa;
-	text-align: right;
-	// float: right;
-	font-size: 28px;
-	font-weight: bold;
+	font-size: 3rem;
+	transition: 0.2s;
+	// font-weight: bold;
 }
 
 .close:hover,

@@ -32,7 +32,7 @@ const BookModal = ({ book, onChange, moreInfo }) => {
 	const isbn = book.volumeInfo.industryIdentifiers
 		? book.volumeInfo.industryIdentifiers[
 				book.volumeInfo.industryIdentifiers.length - 1
-		  ]
+		  ].identifier
 		: "Unknown";
 
 	const lang = book.volumeInfo.language
@@ -51,34 +51,49 @@ const BookModal = ({ book, onChange, moreInfo }) => {
 		? book.volumeInfo.description
 		: "No description";
 
-	const handleClose = () => {
-		onChange();
+	const handleClose = (e) => {
+		// const boxStyle = styles.BookModal__Box
+		const modalBg = document.getElementsByClassName(styles.BookModal)[0];
+		const closeBtn = document.getElementsByClassName(styles.close)[0];
+		if (e.target === modalBg || e.target === closeBtn) {
+			onChange();
+		}
 	};
 
+	console.log("ISBN", isbn);
+	console.log(styles);
+
 	return (
-		// <div>Hello</div>
 		<div className={styles.BookModal} onClick={handleClose}>
 			<div className={styles.BookModal__Box}>
-				{/* <div className={styles.close}>&times;</div> */}
+				<span className={styles.close}>&times;</span>
 				{image}
+
 				<div className={styles.BookModal__Box_Info}>
-					<p>Title:</p>
+					<p className={styles.BookModal__Box_Info_col1}>Title:</p>
 					<p>{title}</p>
-					<p>Authors:</p>
+					<p className={styles.BookModal__Box_Info_col1}>Authors:</p>
 					<p>{authors}</p>
-					<p>Pages:</p>
+					<p className={styles.BookModal__Box_Info_col1}>Pages:</p>
 					<p>{pages}</p>
-					<p>Publish Date:</p>
+					<p className={styles.BookModal__Box_Info_col1}>
+						Publish Date:
+					</p>
 					<p>{date}</p>
-					<p>Publisher:</p>
+					<p className={styles.BookModal__Box_Info_col1}>ISBN:</p>
+					<p>{isbn}</p>
+					<p className={styles.BookModal__Box_Info_col1}>
+						Publisher:
+					</p>
 					<p>{publisher}</p>
-					<p>Language:</p>
+					<p className={styles.BookModal__Box_Info_col1}>Language:</p>
 					<p>{lang}</p>
-					<p>Genres:</p>
+					<p className={styles.BookModal__Box_Info_col1}>Genres:</p>
 					<p>{cats}</p>
-					<p>Description:</p>
+					<p className={styles.BookModal__Box_Info_col1}>
+						Description:
+					</p>
 					<p>{desc}</p>
-					{/* <p>ISBN: {isbn}</p> */}
 				</div>
 			</div>
 		</div>
