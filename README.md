@@ -109,5 +109,6 @@ I added the suggested bonus features, as well as some more functionality to the 
 
 ### Future Additions
 
+-   [ ] Group fetches to avoid triggering new fetch on each search param change
 -   [ ] Add expandable search fields
 -   [ ] Advanced search options (title, author, year)
