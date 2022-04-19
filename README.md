@@ -10,6 +10,7 @@ A web UI for the Google Books API using React and React Router.
 
 -   [Screenshots](#screenshots)
 -   [Goals](#goals)
+-   [Tech Stack](#tech-stack)
 -   [Implementation](#implementation)
     -   [MVP](#mvp)
     -   [Plan](#plan)
@@ -39,6 +40,16 @@ A web UI for the Google Books API using React and React Router.
 -   To learn to create and deploy modular components and containers using **React**
 -   To organise components and routes effectively with **React Router**
 -   To create a functional, intuitive and aesthetic interface using HTML and SCSS
+
+## Tech Stack
+
+-   HTML
+-   CSS/SCSS
+-   JavaScript
+-   Git
+-   ReactJS
+-   React Router DOM
+-   [Google Books API](https://developers.google.com/books)
 
 ## Implementation
 
