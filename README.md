@@ -20,18 +20,18 @@ A web UI for the Google Books API using React and React Router.
 ## Screenshots
 
 <figure>
-<img src="./src/assets/img/homepage.png" width="300px" alt="Home Page" />
 <figcaption><i>Home Page</i></figcaption>
+<img src="./src/assets/img/homepage.png" width="300px" alt="Home Page" />
 </figure>
 
 <figure>
-<img src="./src/assets/img/small.png" height="300px" alt="Small Screen UI" />
 <figcaption><i>Responsive UI</i></figcaption>
+<img src="./src/assets/img/small.png" height="300px" alt="Small Screen UI" />
 </figure>
 
 <figure>
-<img src="./src/assets/img/modal.png" width="300px" alt="Search Result Modals" />
 <figcaption><i>Search Result Modals</i></figcaption>
+<img src="./src/assets/img/modal.png" width="300px" alt="Search Result Modals" />
 </figure>
 
 ## Goals
